@@ -1,0 +1,32 @@
+  /* Styles for the navigation menu */
+  nav {
+    background-color: #333; /* Couleur de fond du menu de navigation */
+    color: #fff; /* Couleur du texte */
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around; /* Espacement égal entre les éléments */
+  }
+  
+  nav li {
+    padding: 10px 20px; /* Espacement interne pour chaque élément de la liste */
+    font-size: 16px; /* Taille de police */
+    transition: background-color 0.3s; /* Transition de couleur de fond au survol */
+  }
+  
+  nav li:hover {
+    background-color: #555; /* Couleur de fond au survol */
+  }
+  
+  /* Ajoutez un style différent pour le lien "M'inscrire" (par exemple, une couleur différente) */
+  nav li:nth-child(3) {
+    color: #ff6600; /* Exemple de couleur différente pour ce lien */
+  }
+  
+  /* Ajoutez un style différent pour le lien "Se connecter" (par exemple, une couleur différente) */
+  nav li:last-child {
+    color: #00cc66; /* Exemple de couleur différente pour ce lien */
+  }
