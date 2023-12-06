@@ -1,0 +1,38 @@
+/* Style pour les éléments du menu */
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .side-menu li {
+    padding: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .side-menu li:hover {
+    background-color: #555;
+  }
+  
+  /* Style pour les éléments actifs du menu */
+  .side-menu li.active {
+    background-color: #555;
+    border-right: 5px solid #fff;
+  }
+  
+  /* Style pour le contenu principal */
+  .main-content {
+    margin-left: 0; /* Aucun décalage par défaut */
+    padding: 20px;
+    transition: margin-left 0.3s;
+  }
+  
+  /* Décale le contenu principal lors de l'affichage du menu */
+  .main-content.shifted {
+    margin-left: 250px;
+  }
+  
+  /* Change la couleur de fond pour l'élément cliqué */
+  .side-menu li.active:hover {
+    background-color: #555;
+  }
+  

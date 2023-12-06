@@ -5,15 +5,18 @@
 				<th>Nom</th>
 				<th>Prénom</th>
 				<th>Email</th>
-				<th>status</th>
+				<th>Status</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr *ngFor="let u of listeUsers">
-				<td>{{ u.nom }}</td>
-				<td>{{ u.prenom }}</td>
-				<td>{{ u.email }}</td>
-				<td><span *ngIf="u.status != 'user'">{{ u.status }}</span></td>
+			<tr *ngFor="let user of usersData">
+				<td>{{ user.nom }}</td>
+				<td>{{ user.prenom }}</td>
+				<td>{{ user.email }}</td>
+				<td>
+					<span *ngIf="user.status !== 'user'">{{ user.status }}</span>
+					<span *ngIf="user.status === 'user'">Utilisateur</span>
+				</td>
 			</tr>
 		</tbody>
 	</table>

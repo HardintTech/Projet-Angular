@@ -1,0 +1,23 @@
+<div>
+    <h2>Ajouter un événement</h2>
+    <form (ngSubmit)="ajouterEvenement()">
+      <label for="titre">Titre :</label>
+      <input type="text" id="titre" name="titre" [(ngModel)]="nouvelEvenement.titre" required>
+  
+      <label for="places">Nombre de places :</label>
+      <input type="text" id="places" name="places" [(ngModel)]="nouvelEvenement.places" required>
+  
+      <label for="debut">Début :</label>
+      <input type="datetime-local" id="debut" name="debut" [(ngModel)]="nouvelEvenement.debut" required>
+  
+      <label for="fin">Fin :</label>
+      <input type="datetime-local" id="fin" name="fin" [(ngModel)]="nouvelEvenement.fin" required>
+  
+      <label for="date">Date :</label>
+      <input type="number" id="date" name="date" [(ngModel)]="nouvelEvenement.date" required>
+  
+      <button type="submit">Ajouter</button>
+    </form>
+  </div>
+  
+  

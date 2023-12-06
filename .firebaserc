@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cy2023-feast-89a16": {
+      "hosting": {
+        "gestionnaire-soiree": [
+          "cy2023-feast-89a16"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cy2023-feast-89a16"
+  }
+}

@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AccueilComponent {
   title = 'Welcome';
-  soustitre: string = "sous-titre";
-  moustache: string = "Ceci est une moustache";
+  soustitre = "sous-titre";
+  moustache = "Ceci est une moustache";
   liste_moustache: Array<string> = ["Moustache", "Favoris"];
 
 }

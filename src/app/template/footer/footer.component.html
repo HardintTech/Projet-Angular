@@ -3,6 +3,6 @@
 		<li routerLink = "/copyrights" class="router-link">Copyrights</li>
 		<li routerLink = "/rgpd" class="router-link">RGPD</li>
 		<li routerLink = "/contact" class="router-link">Contacts</li>
-		<li routerLink = "/organisation" class="router-link">Accès privé (organisation)</li>
+		<li routerLink = "/organisation" class="router-link" *ngIf="auth.isLoggedIn">Accès privé (organisation)</li>
 	</ul>
 </footer>

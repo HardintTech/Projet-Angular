@@ -1,4 +1,7 @@
-# GestionnaireSoiree
+# GestionnaireSoiree by Alexandre Biscorray
+
+superadmin : caca@caca.com/caca123
+user : test@test.com/test123
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
 

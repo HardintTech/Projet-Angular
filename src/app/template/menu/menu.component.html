@@ -1,10 +1,11 @@
-<nav class="navigation">
+<nav>
 	<ul>
-		<li routerLink = "/" class="router-link">Accueil</li>
-		<li routerLink = "/evenements" class="router-link">Événements</li>
-		<li routerLink = "/inscription" class="router-link">M'inscrire</li>
-		<li routerLink = "/profil" class="router-link">Mon profil</li>
-		<li routerLink = "/utilisateurs" class="router-link">Ils se sont déjà inscrits</li>
-		<li routerLink = "/connexion" class="active" class="router-link">Se connecter</li>
+		<li routerLink = "/">Accueil</li>
+		<li routerLink = "/evenements">Événements</li>
+		<li routerLink = "/utilisateurs">Ils se sont déjà inscrits</li>
+		<li routerLink = "/connexion" *ngIf="!auth.isLoggedIn">Se connecter</li>
+		<li routerLink = "/inscription" *ngIf="!auth.isLoggedIn">M'inscrire</li>
+		<li routerLink = "/profil" *ngIf="auth.isLoggedIn">Mon profil</li>
+		<button routerLink="/" (click)="auth.fireSignOut()" *ngIf="auth.isLoggedIn">Se déconnecter</button>
 	</ul>
 </nav>

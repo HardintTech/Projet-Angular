@@ -17,8 +17,18 @@ import { MentionsComponent } from './pages/mentions/mentions.component';
 import { RgpdComponent } from './pages/rgpd/rgpd.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ErrorComponent } from './pages/error/error.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { EventsPipe } from './shared/pipes/events.pipe';
+import { EvenementComponent } from './pages/evenement/evenement.component';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getDatabase, provideDatabase } from '@angular/fire/database';
+import { getStorage, provideStorage } from '@angular/fire/storage';
+import { Auth401Interceptor } from './shared/securite/auth401.interceptor';
+import { TokenInterceptor } from './shared/securite/token.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -37,14 +47,33 @@ import { EventsPipe } from './shared/pipes/events.pipe';
     ContactComponent,
     ErrorComponent,
     EventsPipe,
+    EvenementComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-	FormsModule,
-	HttpClientModule,
+    FormsModule,
+    HttpClientModule,
+    provideFirebaseApp(() => initializeApp({ "projectId": "cy2023-feast-89a16", "appId": "1:520953949750:web:658319f5351bfb5a5e3297", "storageBucket": "cy2023-feast-89a16.appspot.com", "apiKey": "AIzaSyC2ONgPDQkmNbaNPYkY9x0g-jvoAn7RtMc", "authDomain": "cy2023-feast-89a16.firebaseapp.com", "messagingSenderId": "520953949750" })),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideDatabase(() => getDatabase()),
+    provideStorage(() => getStorage()),
+    BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: Auth401Interceptor,
+			multi: true
+		},
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: TokenInterceptor,
+			multi: true
+		},
+	],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

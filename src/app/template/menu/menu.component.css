@@ -20,13 +20,3 @@
   nav li:hover {
     background-color: #555; /* Couleur de fond au survol */
   }
-  
-  /* Ajoutez un style différent pour le lien "M'inscrire" (par exemple, une couleur différente) */
-  nav li:nth-child(3) {
-    color: #ff6600; /* Exemple de couleur différente pour ce lien */
-  }
-  
-  /* Ajoutez un style différent pour le lien "Se connecter" (par exemple, une couleur différente) */
-  nav li:last-child {
-    color: #00cc66; /* Exemple de couleur différente pour ce lien */
-  }
